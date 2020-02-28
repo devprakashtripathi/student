@@ -8,9 +8,15 @@ if(isset($_POST['signup']))
 	$lname=$_POST['lname'];
 	$email=$_POST['email'];
 	$password=$_POST['password'];
-	$contact=$_POST['contact'];
 	$enc_password=$password;
-	$msg=mysqli_query($con,"insert into users(fname,lname,email,password,contactno) values('$fname','$lname','$email','$enc_password','$contact')");
+	$contact=$_POST['contact'];
+	$clgname=$_POST['College_Name'];
+	$clgadd=$_POST['College_Address'];
+	$Unid =$_POST['university_id'];
+	$DEPt =$_POST['Department'];
+	$cou =$_POST['course'];
+
+	$msg=mysqli_query($con,"insert into users(fname,lname,email,password,contactno,collegename,collegeAddress,Universityid,Departmentid,Courseid) values('$fname','$lname','$email','$enc_password','$contact','$clgname','$clgadd','$Unid','$DEPt','$cou')");
 if($msg)
 {
 	echo "<script>alert('Register successfully');</script>";
